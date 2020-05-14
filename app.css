@@ -1,0 +1,133 @@
+
+
+html, body{
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 1.4;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+a{text-decoration: none; color: inherit;}
+.site-content{padding-top: 66px;}
+.container{margin: 0 20px;}
+
+.header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 66px;
+    
+    line-height: 66px;
+    color: #FFF;
+
+    background-color: #2e7d32;
+}
+
+.header__logo{
+    font-weight: bold;
+    padding: 0 25px;
+    float: left;
+}
+
+.menu{
+    float: left;
+    
+}
+
+.menu a {
+    padding: 0 10px;;
+}
+
+.menu a:hover{
+    color: #c6ff00;
+}
+
+
+
+@media screen and (max-width: 750px){
+    .site-container{
+        overflow: hidden;
+        height: 100%;
+    }
+
+
+    .site-pusher{
+        transition-duration: 0.3s ;
+        transform: translateX(0px);
+        height: 100%;
+    }
+
+
+    .site-content{ /*contenu du site dans une div*/
+        position: absolute;
+        top: 66px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding-top: 0;
+        overflow-y:scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .header{ /*"libere menu mobile"*/
+        position: static;
+    }
+
+
+    .header__icon{ /* zone cliquable icone hamburger*/
+        position: relative;
+        display: block;
+        float: left;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .header__icon::after{ /*icone hamburger*/
+        content:'';
+        position: absolute;
+        display: block;
+        width: 16px;
+        top: 16px;
+        left: 15px;
+        height: 0;
+        box-shadow: 0 10px 0 1px #FFF,  0 16px 0 1px #FFF, 0 22px 0 1px #FFF;
+
+        
+    }
+    .menu{ /*structure menu mobile*/
+         position: absolute;
+         left: 0;
+         top: 0;
+         bottom: 0;
+         background-color: #5c7500;
+         width: 250px;
+         transform: translateX(-250px);
+         transition-duration: 0.3s;
+    }
+
+    .menu a { /* style lien dans menu mobile */
+        display: block;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-bottom: 1px solid #c6ff00;
+    }
+
+
+
+    .with--sidebar .site-pusher{
+       transform: translateX(250px);
+    }
+
+    .with--sidebar .site-cache{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
